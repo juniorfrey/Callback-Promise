@@ -1,0 +1,2 @@
+Comandos a ejecutar cuando se descargue el proyecto
+carpeta: node_modules -> npm install
