@@ -1,6 +1,8 @@
+import { buscarHeroe } from './js/callaback'
 import './style.css';
-import { saludar }  from './js/componentes'
+const heoreId = 'iron';
 
 
-const nombre = 'Fredys !!!';
-saludar(nombre);
+buscarHeroe(heoreId, (heroe) => {
+    console.log(heroe);
+});
