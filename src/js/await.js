@@ -1,18 +1,25 @@
-import { buscarHeroeAsync } from "./Promesas";
+import { buscarHeroeAsync, buscarHeroe } from "./Promesas";
 
 
 const heroesIds = ['capi','iron','spider'];
 
 export const obtenerHeroesArr = async() => {
 
-    const heroeArr = [];
+    //const heroeArr = [];
 
 
-    for (const id of heroesIds) {
-        const heroe = await buscarHeroeAsync(id);
+    /*for (const id of heroesIds) {
+        const heroe = await buscarHeroe(id);
         heroeArr.push(heroe);
         
-    }
+    }*/
 
-    return heroeArr;
+    /*for (const id of heroesIds) {
+        heroeArr.push(buscarHeroe(id));
+    }*/
+
+    //return await Promise.all(heroeArr);
+    return await Promise.all( heroesIds.map(buscarHeroe));
 }
+
+// export const obtenerHeroesArr = async() => return await Promise.all( heroesIds.map(buscarHeroe));
