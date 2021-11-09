@@ -15,8 +15,14 @@ const heoreId2 = 'spider';
 });*/
 
 // Promesas
-buscarHeroe(heoreId1).then(heroe => {
+/*buscarHeroe(heoreId1).then(heroe => {
     console.log(`Enviando a ${heroe.nombre} a la función`);
-});
+});*/
+
+// Promesas en paralelo
+Promise.all([buscarHeroe(heoreId1), buscarHeroe(heoreId2)])
+    .then( ([heroe1, heroe2]) => {
+        console.log(`Enviamdo a ${heroe1.nombre} y ${heroe2.nombre} a la misión`);
+    })
 
 console.log('Fin de programa');
